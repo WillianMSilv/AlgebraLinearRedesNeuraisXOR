@@ -74,18 +74,18 @@ class RedeNeuralSimplificada:
 
             # Mostra progresso a cada 500 épocas
             if epoch % 500 == 0:
-                print(f"Epoca {epoch:4d}: Erro = {erro:.6f}")
+                print(f"Época {epoch:4d}: Erro = {erro:.6f}")
 
             # Critérios de parada: erro pequeno ou muitas épocas sem melhoria
             if erro < 0.02 or epochs_sem_melhoria > 200:
                 if erro < 0.02:
-                    print(f"CONVERGENCIA: Epoca {epoch} (Erro: {erro:.6f})")
+                    print(f"CONVERGENCIA: Época {epoch} (Erro: {erro:.6f})")
                 else:
-                    print(f"ESTABILIZOU: Epoca {epoch} (Erro: {erro:.6f})")
+                    print(f"ESTABILIZOU: Época {epoch} (Erro: {erro:.6f})")
                 break
         else:
             # Executa se o loop terminar sem break (atingiu máximo de épocas)
-            print(f"Limite: {epochs} epocas (Erro: {erro:.6f})")
+            print(f"Limite: {epochs} épocas (Erro: {erro:.6f})")
 
         self.visualizar_resultado(X, y)  # Mostra resultados visuais
 
@@ -94,7 +94,7 @@ class RedeNeuralSimplificada:
         fig = plt.figure(figsize=(15, 5))
 
         try:
-            fig.suptitle(f'RESULTADOS - REDE NEURAL XOR\nConvergiu em {len(self.historico_erro)} epocas',
+            fig.suptitle(f'RESULTADOS - REDE NEURAL XOR\nConvergiu em {len(self.historico_erro)} épocas',
                          fontsize=14, fontweight='bold')
 
             # Gráfico 1: Evolução do erro durante o treinamento
